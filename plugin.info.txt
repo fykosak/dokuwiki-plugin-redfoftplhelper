@@ -1,0 +1,7 @@
+base   redfoftplhelper
+author Štěpán Stenchlák
+email  stenchlak@fykos.cz
+date   2018-11-06
+name   redfoftplhelper plugin
+desc   Helper for template redfoftpl
+url    https://fykos.cz
