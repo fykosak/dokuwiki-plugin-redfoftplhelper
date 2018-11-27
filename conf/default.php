@@ -7,3 +7,5 @@
 
 //$conf['fixme']    = 'FIXME';
 
+$conf['locales'] = 'cs:cs_CZ.utf8,en:en_US.utf8';
+

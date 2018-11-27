@@ -32,7 +32,7 @@ class syntax_plugin_redfoftplhelper_program extends DokuWiki_Syntax_Plugin {
     public function render($mode, Doku_Renderer $renderer, $data) {
         global $conf;
 
-        setlocale(LC_TIME, $conf['lang'] . '.UTF-8');
+        setlocale(LC_TIME, $this->getLocale($conf['lang']));
 
         list($lang, $program) = $data;
         if ($mode == 'xhtml') {
@@ -86,5 +86,17 @@ class syntax_plugin_redfoftplhelper_program extends DokuWiki_Syntax_Plugin {
 
     private function getTimestamp($date) {
         return DateTime::createFromFormat('Y-m-d H: i: s', $date)->getTimestamp();
+    }
+
+    private function getLocale($lang) {
+        $entries = explode(',', $this->getConf('locales'));
+        foreach ($entries as $entry) {
+            list ($entry_lang, $entry_locale) = explode(':', $entry);
+            if ($lang === $entry_lang) {
+                return $entry_locale;
+            }
+        }
+
+        return false;
     }
 }

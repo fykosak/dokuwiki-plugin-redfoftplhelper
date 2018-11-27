@@ -8,3 +8,5 @@
 
 //$meta['fixme'] = array('string');
 
+$meta['locales'] = array('string');
+
