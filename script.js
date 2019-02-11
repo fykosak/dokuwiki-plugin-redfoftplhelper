@@ -75,7 +75,7 @@ jQuery(() => {
     };
     document.querySelectorAll('.tpl-countdown').forEach((element) => {
         const metaTag = document.querySelector('meta[name="redfoftplhelper-server-time"]');
-        const deltaServer = metaTag ? (new Date(metaTag.getAttribute('content')).getTime() - (new Date()).getTime()) : 0;
+        const deltaServer = metaTag ? (new Date(metaTag.getAttribute('content') * 1000).getTime() - (new Date()).getTime()) : 0;
         countDown(element, +deltaServer);
     });
 });

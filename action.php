@@ -14,7 +14,7 @@ class action_plugin_redfoftplhelper extends DokuWiki_Action_Plugin {
         /*
          * correction to server time + user can set different between server and display time.
          */
-        $date = date('c', time() + ($this->getConf('server-correction')));
+        $date = time() + ($this->getConf('server-correction'));
 
         $event->data['meta'][] = [
             'name' => 'redfoftplhelper-server-time',
